@@ -2,12 +2,12 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY . /app
-
-RUN pip install --upgrade pip
+COPY requirements.txt requirements.txt 
 
 RUN pip install -r requirements.txt
 
+COPY . .
+
 EXPOSE 4000
 
-CMD python ./run.py 
+CMD ["python3", "run.py"]
